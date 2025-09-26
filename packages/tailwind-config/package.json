@@ -1,0 +1,42 @@
+{
+  "name": "@repo/tailwind-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Centeralized tailwind config",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./base": {
+      "types": "./dist/base.d.ts",
+      "import": "./dist/base.js",
+      "require": "./dist/base.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "5.9.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
