@@ -8,6 +8,9 @@ import {
   CardDescription,
   CardContent,
   LoginForm,
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
 } from "@repo/ui";
 
 
@@ -24,6 +27,27 @@ export default function Home() {
       </main>
       
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        <div className="mb-8">
+          <Button asChild size="lg">
+            <a href="/portfolio">View Portfolio</a>
+          </Button>
+        </div>
+        
+        {/* Avatar Examples */}
+        <div className="flex items-center gap-4 mb-6">
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <Avatar>
+            <AvatarImage src="https://github.com/vercel.png" alt="@vercel" />
+            <AvatarFallback>VC</AvatarFallback>
+          </Avatar>
+          <Avatar>
+            <AvatarFallback>JD</AvatarFallback>
+          </Avatar>
+        </div>
+        
         <Card className="w-96">
           <CardHeader>
             <CardTitle>Test Card Component</CardTitle>
