@@ -11,8 +11,7 @@
         "dist/**",
         "lib/**",
         "build/**"
-      ],
-      "env": ["GMAIL_USER", "GMAIL_APP_PASSWORD", "CONTACT_EMAIL", "NEXT_PUBLIC_RECAPTCHA_SITE_KEY", "RECAPTCHA_SECRET_KEY"]
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"],
@@ -26,8 +25,7 @@
     },
     "dev": {
       "cache": false,
-      "persistent": true,
-      "env": ["GMAIL_USER", "GMAIL_APP_PASSWORD", "CONTACT_EMAIL", "NEXT_PUBLIC_RECAPTCHA_SITE_KEY", "RECAPTCHA_SECRET_KEY"]
+      "persistent": true
     }
   }
 }
