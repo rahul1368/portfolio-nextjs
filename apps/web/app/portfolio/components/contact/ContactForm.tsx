@@ -82,8 +82,10 @@ export function ContactForm() {
       const recaptchaToken = await recaptchaRef.current?.executeAsync();
       
       if (!recaptchaToken) {
-        setSubmitStatus('error');
-        setErrorMessage('reCAPTCHA verification failed. Please try again.');
+        toast.error("reCAPTCHA verification failed", {
+          description: "Please try again.",
+          duration: 5000,
+        });
         setIsSubmitting(false);
         return;
       }
@@ -145,7 +147,7 @@ export function ContactForm() {
       <CardHeader>
         <CardTitle className={`${theme.text.h4} font-bold`}>Send me a message</CardTitle>
         <p className={`${theme.text.mutedBody}`}>
-          I'm always interested in new opportunities and exciting projects.
+          I&apos;m always interested in new opportunities and exciting projects.
         </p>
       </CardHeader>
       <CardContent>

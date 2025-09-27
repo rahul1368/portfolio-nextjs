@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
+import { Card, CardContent } from "@repo/ui";
 import { theme } from "../../theme";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
@@ -44,7 +44,7 @@ export function ContactInfo({ email, phone, location, availability }: ContactInf
       <div>
         <h3 className={`${theme.text.h4} font-bold mb-3 sm:mb-4`}>Get in touch</h3>
         <p className={`${theme.text.mutedBody} leading-relaxed`}>
-          I'm always open to discussing new opportunities, creative projects, or just having a chat about technology and design.
+          I&apos;m always open to discussing new opportunities, creative projects, or just having a chat about technology and design.
         </p>
       </div>
       

@@ -3,12 +3,12 @@
 import { Badge } from "@repo/ui";
 import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
 import { Cpu, Settings, Cloud, Bot, Building, Monitor } from "lucide-react";
-import { theme } from "../../theme";
+import { theme, colorSchemes } from "../../theme";
 
 interface SkillCategoryCardProps {
   category: string;
   icon: string;
-  colorScheme: any;
+  colorScheme: string;
   skills: string[];
   index: number;
 }
@@ -25,10 +25,11 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function SkillCategoryCard({ category, icon, colorScheme, skills, index }: SkillCategoryCardProps) {
   const IconComponent = iconMap[icon] || Monitor; // fallback to Monitor if icon not found
+  const scheme = colorSchemes[colorScheme as keyof typeof colorSchemes] || colorSchemes.primary;
   
   return (
     <Card 
-      className={`${theme.card.base} ${theme.card.hover} ${colorScheme.border} hover:border-opacity-60 group relative overflow-hidden bg-gradient-to-br from-background to-muted/10 hover:from-background hover:to-muted/20 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5`}
+      className={`${theme.card.base} ${theme.card.hover} ${scheme.border} hover:border-opacity-60 group relative overflow-hidden bg-gradient-to-br from-background to-muted/10 hover:from-background hover:to-muted/20 transition-all duration-500 hover:shadow-lg hover:shadow-primary/5`}
       style={{ animationDelay: theme.animation.stagger(index) }}
     >
       {/* Background gradient overlay */}

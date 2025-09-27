@@ -11,7 +11,7 @@ export function HeroHeading({ name, title }: HeroHeadingProps) {
   return (
     <div className="space-y-3 sm:space-y-4">
       <h1 className={`${theme.text.h1} leading-tight`}>
-        <span className="block">Hi, I'm</span>
+        <span className="block">Hi, I&apos;m</span>
         <span className={`block ${theme.header.title.gradient}`}>
           {name}
         </span>

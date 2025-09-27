@@ -20,91 +20,6 @@ export function ExperienceSection() {
     <section id="experience" className={`${theme.section.padding} ${theme.background.section} relative overflow-hidden`}>
       <AnimatedBackground />
       
-      {/* Custom animations */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-        
-        .animate-slide-in-left {
-          animation: slideInLeft 0.6s ease-out forwards;
-        }
-        
-        .animate-slide-in-right {
-          animation: slideInRight 0.6s ease-out forwards;
-        }
-        
-        .animate-scale-in {
-          animation: scaleIn 0.6s ease-out forwards;
-        }
-        
-        .experience-card {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .experience-card.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        
-        .stats-card {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .stats-card.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      `}</style>
-      
       <div className={`relative z-10 ${theme.section.container}`}>
         <div className={theme.section.maxWidth}>
           <SectionHeader 
@@ -231,7 +146,7 @@ export function ExperienceSection() {
                     <h3 className={`${theme.text.h3} text-foreground font-bold`}>Career Highlights</h3>
                   </div>
                   <p className={`${theme.text.bodyLarge} text-muted-foreground max-w-4xl mx-auto leading-relaxed`}>
-                    Throughout my career, I've worked with leading companies across fintech, e-commerce, edtech, and domain management, consistently delivering high-quality solutions.
+                    Throughout my career, I&apos;ve worked with leading companies across fintech, e-commerce, edtech, and domain management, consistently delivering high-quality solutions.
                   </p>
                 </div>
                 

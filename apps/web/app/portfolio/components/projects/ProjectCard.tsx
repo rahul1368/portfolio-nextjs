@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
 import { Button } from "@repo/ui";
 import { theme } from "../../theme";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -33,9 +34,11 @@ export function ProjectCard({
       style={{ animationDelay: theme.animation.stagger(index) }}
     >
       <div className="relative h-48 overflow-hidden">
-        <img 
+        <Image 
           src={image} 
           alt={title}
+          width={400}
+          height={192}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>

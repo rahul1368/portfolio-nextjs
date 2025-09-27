@@ -10,10 +10,9 @@ interface NavigationProps {
   brand: string;
   downloadResume: string;
   getStarted: string;
-  menu: string;
 }
 
-export function Navigation({ brand, downloadResume, getStarted, menu }: NavigationProps) {
+export function Navigation({ brand, downloadResume, getStarted }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (

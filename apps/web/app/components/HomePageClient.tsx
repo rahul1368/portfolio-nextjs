@@ -39,7 +39,6 @@ export function HomePageClient({ content }: HomePageClientProps) {
           brand={content.navigation.brand}
           downloadResume={content.navigation.downloadResume}
           getStarted={content.navigation.getStarted}
-          menu={content.navigation.menu}
         />
 
         {/* Hero Section - Using Portfolio Component */}

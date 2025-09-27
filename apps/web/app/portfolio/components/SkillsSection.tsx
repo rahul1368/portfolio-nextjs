@@ -2,7 +2,7 @@
 
 import { Card, CardContent, Badge } from "@repo/ui";
 import { Rocket, Zap, Trophy, Sparkles, TrendingUp, Star, Award } from "lucide-react";
-import { theme, colorSchemes } from "../theme";
+import { theme } from "../theme";
 import { getSkillsData } from "../lib/content";
 import { AnimatedBackground } from "./shared/AnimatedBackground";
 import { SectionHeader } from "./shared/SectionHeader";
@@ -10,10 +10,7 @@ import { SkillCategoryCard } from "./skills/SkillCategoryCard";
 
 export function SkillsSection() {
   const skillsData = getSkillsData();
-  const skills = skillsData.categories.map(category => ({
-    ...category,
-    colorScheme: colorSchemes[category.colorScheme as keyof typeof colorSchemes]
-  }));
+  const skills = skillsData.categories;
 
   const proficiencyData = skillsData.proficiency;
 

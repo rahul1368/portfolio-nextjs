@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@repo/ui";
-import { Badge } from "@repo/ui";
 import { Card } from "@repo/ui";
 import { Home, Code, Briefcase, FolderOpen, Mail, ChevronUp, Sparkles } from "lucide-react";
 import { theme } from "../theme";
