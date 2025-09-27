@@ -1,67 +1,70 @@
-"use client";
+import { Metadata } from 'next';
+import { homepageContent } from './content';
+import { HomePageClient } from './components/HomePageClient';
 
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  LoginForm,
-  Avatar,
-  AvatarImage,
-  AvatarFallback,
-} from "@repo/ui";
+export const metadata: Metadata = {
+  title: homepageContent.seo.title,
+  description: homepageContent.seo.description,
+  keywords: [...homepageContent.seo.keywords],
+  authors: [{ name: homepageContent.seo.author }],
+  creator: homepageContent.seo.author,
+  publisher: homepageContent.seo.author,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'profile',
+    title: homepageContent.seo.openGraph.title,
+    description: homepageContent.seo.openGraph.description,
+    url: homepageContent.seo.openGraph.url,
+    siteName: homepageContent.seo.openGraph.siteName,
+    images: [
+      {
+        url: homepageContent.seo.openGraph.image,
+        width: 1200,
+        height: 630,
+        alt: homepageContent.seo.openGraph.title,
+      },
+    ],
+  },
+  twitter: {
+    card: homepageContent.seo.twitter.card,
+    title: homepageContent.seo.twitter.title,
+    description: homepageContent.seo.twitter.description,
+    images: [homepageContent.seo.twitter.image],
+  },
+  alternates: {
+    canonical: homepageContent.seo.canonical,
+  },
+  other: {
+    'application-name': 'Rahul Choudhary Portfolio',
+    'apple-mobile-web-app-title': 'Rahul Choudhary',
+    'msapplication-TileColor': '#000000',
+    'theme-color': '#000000',
+  },
+};
 
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh" }}>
-      <main>
-        <LoginForm />
-
-        <Button variant="ghost">Open alert</Button>
-        <div className="flex flex-wrap items-center gap-2 md:flex-row">
-          <Button variant={"outline"}>Button</Button>
-        </div>
-      </main>
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homepageContent.seo.structuredData),
+        }}
+      />
       
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <div className="mb-8">
-          <Button asChild size="lg">
-            <a href="/portfolio">View Portfolio</a>
-          </Button>
-        </div>
-        
-        {/* Avatar Examples */}
-        <div className="flex items-center gap-4 mb-6">
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-          <Avatar>
-            <AvatarImage src="https://github.com/vercel.png" alt="@vercel" />
-            <AvatarFallback>VC</AvatarFallback>
-          </Avatar>
-          <Avatar>
-            <AvatarFallback>JD</AvatarFallback>
-          </Avatar>
-        </div>
-        
-        <Card className="w-96">
-          <CardHeader>
-            <CardTitle>Test Card Component</CardTitle>
-            <CardDescription>
-              This is a test of the shadcn/ui Card component with Tailwind CSS
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p>
-              This card was created using shadcn/ui CLI and is styled with
-              Tailwind CSS!
-            </p>
-          </CardContent>
-        </Card>
-    </div>
+      {/* Main Content */}
+      <HomePageClient content={homepageContent} />
+    </>
   );
 }

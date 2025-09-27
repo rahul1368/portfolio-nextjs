@@ -2,6 +2,7 @@
 
 import { HeroSection } from "./components/HeroSection";
 import { SkillsSection } from "./components/SkillsSection";
+import { ExperienceSection } from "./components/experiences/ExperienceSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { ContactSection } from "./components/ContactSection";
 import { ThemeToggle } from "./components/ThemeToggle";
@@ -17,6 +18,7 @@ export default function PortfolioPage() {
       
       <HeroSection />
       <SkillsSection />
+      <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
       

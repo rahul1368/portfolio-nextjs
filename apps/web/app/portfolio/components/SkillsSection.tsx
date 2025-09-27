@@ -1,10 +1,12 @@
 "use client";
 
-import { Badge } from "@repo/ui";
-import { Separator } from "@repo/ui";
-import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
+import { Card, CardContent, Badge } from "@repo/ui";
+import { Rocket, Zap, Trophy, Sparkles, TrendingUp, Star, Award } from "lucide-react";
 import { theme, colorSchemes } from "../theme";
 import { getSkillsData } from "../lib/content";
+import { AnimatedBackground } from "./shared/AnimatedBackground";
+import { SectionHeader } from "./shared/SectionHeader";
+import { SkillCategoryCard } from "./skills/SkillCategoryCard";
 
 export function SkillsSection() {
   const skillsData = getSkillsData();
@@ -12,210 +14,199 @@ export function SkillsSection() {
     ...category,
     colorScheme: colorSchemes[category.colorScheme as keyof typeof colorSchemes]
   }));
+
+  const proficiencyData = skillsData.proficiency;
+
   return (
     <section id="skills" className={`${theme.section.padding} ${theme.background.section}`}>
-      {/* Animated Background */}
-      <div className={theme.background.animated}>
-        <div className={theme.background.blur1}></div>
-        <div className={theme.background.blur2}></div>
-      </div>
+      <AnimatedBackground />
       
       <div className={`relative z-10 ${theme.section.container}`}>
         <div className={theme.section.maxWidth}>
-          {/* Section Header */}
-          <div className={`text-center ${theme.section.spacing}`}>
-            <div className={theme.header.badge.container}>
-              <div className={theme.header.badge.dot}></div>
-              <Badge variant="outline" className={theme.header.badge.badge}>
-                {skillsData.header.badge}
-              </Badge>
-            </div>
-            <h2 className={theme.header.title.main}>
-              {skillsData.header.title.split(' ').slice(0, -1).join(' ')} <span className={theme.header.title.gradient}>{skillsData.header.title.split(' ').slice(-1)}</span>
-            </h2>
-            <p className={`${theme.header.subtitle} text-muted-foreground`}>
-              {skillsData.header.description}
-            </p>
-          </div>
+          <SectionHeader 
+            badge={skillsData.header.badge}
+            title={skillsData.header.title}
+            description={skillsData.header.description}
+          />
           
-          {/* Enhanced Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {/* Modern Skills Grid with Enhanced Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
             {skills.map((category, index) => (
-              <Card 
-                key={category.category} 
-                className={`${theme.card.base} ${theme.card.hover} ${category.colorScheme.border} hover:border-opacity-40 group relative overflow-hidden`}
-                style={{ animationDelay: theme.animation.stagger(index) }}
-              >
-                <CardHeader className="pb-4">
-                  <div className="flex items-start gap-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                      {category.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors mb-2">
-                        {category.category}
-                      </CardTitle>
-                      <p className={`${theme.text.small} text-muted-foreground leading-relaxed`}>
-                        {category.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <Badge 
-                        key={skill} 
-                        variant="secondary" 
-                        className="text-xs px-2.5 py-1 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default hover:scale-105 font-medium"
-                        style={{ animationDelay: theme.animation.staggerSkills(index, skillIndex) }}
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                  
-                  {/* Skill count indicator */}
-                  <div className="mt-4 pt-3 border-t border-border/50">
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <span>{category.skills.length} technologies</span>
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                        <span>Expert</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-                
-                {/* Enhanced Hover Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.colorScheme.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-lg pointer-events-none`}></div>
-              </Card>
+              <SkillCategoryCard
+                key={category.category}
+                category={category.category}
+                icon={category.icon}
+                colorScheme={category.colorScheme}
+                skills={[...category.skills]}
+                index={index}
+              />
             ))}
           </div>
           
-          {/* Enhanced Skills Progress Visualization */}
-          <div className="mb-16">
-            <Card className={`${theme.card.base} bg-gradient-to-r from-primary/5 to-secondary/5`}>
-              <CardContent className="py-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                    Technical Proficiency
-                  </h3>
-                  <p className="text-muted-foreground text-lg">Core competencies across modern technology stack</p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-6">
-                    <h4 className="text-xl font-semibold text-center mb-6">Development & Architecture</h4>
-                    {[
-                      { skill: "React/Next.js", level: 95, color: "bg-blue-500", years: "7+" },
-                      { skill: "TypeScript", level: 92, color: "bg-blue-600", years: "6+" },
-                      { skill: "Node.js/Express", level: 90, color: "bg-green-500", years: "7+" },
-                      { skill: "Python/FastAPI", level: 88, color: "bg-yellow-500", years: "5+" },
-                      { skill: "System Design", level: 85, color: "bg-purple-500", years: "5+" },
-                      { skill: "Microservices", level: 82, color: "bg-pink-500", years: "4+" }
-                    ].map((item, index) => (
-                      <div key={item.skill} className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium">{item.skill}</span>
-                            <span className="text-xs text-muted-foreground">({item.years})</span>
-                          </div>
-                          <span className="text-sm text-muted-foreground">{item.level}%</span>
-                        </div>
-                        <div className="w-full bg-muted rounded-full h-2.5">
-                          <div 
-                            className={`h-2.5 rounded-full ${item.color} transition-all duration-1000 ease-out shadow-sm`}
-                            style={{ 
-                              width: `${item.level}%`,
-                              animationDelay: theme.animation.stagger(index)
-                            }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
+          {/* Modern Proficiency Visualization */}
+          <div className="mb-16 sm:mb-20">
+            <div className="text-center mb-8 sm:mb-12">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <TrendingUp className="w-6 h-6 text-primary" />
+                <h3 className={`${theme.text.h3} text-foreground`}>Technical Proficiency</h3>
+              </div>
+              <p className={`${theme.text.bodyLarge} text-muted-foreground max-w-2xl mx-auto`}>
+                Core competencies across modern technology stack with real-world experience
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Skills Progress Cards */}
+              <Card className={`${theme.card.base} bg-gradient-to-br from-background to-muted/20 border-2 hover:border-primary/20 transition-all duration-300`}>
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Star className="w-5 h-5 text-primary" />
+                    </div>
+                    <h4 className={`${theme.text.h5} text-foreground`}>Core Technologies</h4>
                   </div>
                   
-                  <div className="space-y-6">
-                    <h4 className="text-xl font-semibold text-center mb-6">Cloud & DevOps</h4>
-                    {[
-                      { skill: "AWS/GCP", level: 90, color: "bg-orange-500", years: "5+" },
-                      { skill: "Docker/K8s", level: 88, color: "bg-cyan-500", years: "4+" },
-                      { skill: "Terraform", level: 85, color: "bg-emerald-500", years: "3+" },
-                      { skill: "CI/CD Pipelines", level: 87, color: "bg-indigo-500", years: "4+" },
-                      { skill: "Monitoring/Observability", level: 80, color: "bg-red-500", years: "3+" },
-                      { skill: "AI/ML Integration", level: 75, color: "bg-violet-500", years: "2+" }
-                    ].map((item, index) => (
-                      <div key={item.skill} className="space-y-2">
-                        <div className="flex justify-between items-center">
+                  <div className="space-y-4">
+                    {proficiencyData.slice(0, 4).map((item, index) => (
+                      <div key={item.skill} className="group">
+                        <div className="flex justify-between items-center mb-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium">{item.skill}</span>
-                            <span className="text-xs text-muted-foreground">({item.years})</span>
+                            <span className={`${theme.text.label} font-semibold`}>{item.skill}</span>
+                            <Badge variant="secondary" className="text-xs">
+                              {item.category}
+                            </Badge>
                           </div>
-                          <span className="text-sm text-muted-foreground">{item.level}%</span>
+                          <div className="flex items-center gap-2">
+                            <span className={`${theme.text.mutedSmall} font-medium`}>{item.years}</span>
+                            <span className={`${theme.text.mutedSmall} font-bold`}>{item.level}%</span>
+                          </div>
                         </div>
-                        <div className="w-full bg-muted rounded-full h-2.5">
-                          <div 
-                            className={`h-2.5 rounded-full ${item.color} transition-all duration-1000 ease-out shadow-sm`}
-                            style={{ 
-                              width: `${item.level}%`,
-                              animationDelay: theme.animation.stagger(index + 6)
-                            }}
-                          ></div>
+                        <div className="relative">
+                          <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
+                            <div 
+                              className="h-2.5 rounded-full bg-gradient-to-r from-primary to-primary/80 transition-all duration-1000 ease-out group-hover:from-primary group-hover:to-accent"
+                              style={{ 
+                                width: `${item.level}%`,
+                                animationDelay: `${index * 0.1}s`
+                              }}
+                            ></div>
+                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                       </div>
                     ))}
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+
+              <Card className={`${theme.card.base} bg-gradient-to-br from-background to-muted/20 border-2 hover:border-primary/20 transition-all duration-300`}>
+                <CardContent className="p-6 sm:p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                      <Award className="w-5 h-5 text-accent" />
+                    </div>
+                    <h4 className={`${theme.text.h5} text-foreground`}>Specialized Skills</h4>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    {proficiencyData.slice(4).map((item, index) => (
+                      <div key={item.skill} className="group">
+                        <div className="flex justify-between items-center mb-2">
+                          <div className="flex items-center gap-2">
+                            <span className={`${theme.text.label} font-semibold`}>{item.skill}</span>
+                            <Badge variant="outline" className="text-xs">
+                              {item.category}
+                            </Badge>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className={`${theme.text.mutedSmall} font-medium`}>{item.years}</span>
+                            <span className={`${theme.text.mutedSmall} font-bold`}>{item.level}%</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="w-full bg-muted rounded-full h-2.5 overflow-hidden">
+                            <div 
+                              className="h-2.5 rounded-full bg-gradient-to-r from-accent to-accent/80 transition-all duration-1000 ease-out group-hover:from-accent group-hover:to-secondary"
+                              style={{ 
+                                width: `${item.level}%`,
+                                animationDelay: `${(index + 4) * 0.1}s`
+                              }}
+                            ></div>
+                          </div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
           
-          {/* Enhanced Learning Journey */}
-          <div className="text-center">
-            <Card className={`max-w-6xl mx-auto ${theme.card.base} bg-gradient-to-r from-primary/5 to-secondary/5`}>
-              <CardContent className="py-12">
-                <div className="flex items-center justify-center gap-4 mb-8">
-                  <div className="text-5xl animate-bounce">🚀</div>
-                  <h3 className="text-4xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-                    {skillsData.learning.title}
-                  </h3>
+          {/* Enhanced Learning Journey with Modern Design */}
+          <div className="relative">
+            <Card className={`${theme.card.base} bg-gradient-to-br from-primary/5 via-background to-secondary/5 border-2 border-primary/10 overflow-hidden`}>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5"></div>
+              <CardContent className="relative py-8 sm:py-12 md:py-16">
+                <div className="text-center mb-8 sm:mb-12">
+                  <div className="inline-flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                      <Rocket className="w-6 h-6 text-white animate-pulse" />
+                    </div>
+                    <h3 className={`${theme.text.h3} font-bold text-foreground`}>
+                      {skillsData.learning.title}
+                    </h3>
+                  </div>
+                  <p className={`${theme.text.bodyLarge} text-muted-foreground max-w-3xl mx-auto leading-relaxed`}>
+                    {skillsData.learning.description}
+                  </p>
                 </div>
-                <p className={`${theme.text.large} text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed`}>
-                  {skillsData.learning.description}
-                </p>
                 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                {/* Modern Topic Tags */}
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
                   {skillsData.learning.topics.map((topic, index) => (
                     <Badge 
                       key={topic} 
                       variant="outline" 
-                      className="text-sm px-4 py-3 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default hover:scale-105 font-medium"
-                      style={{ animationDelay: theme.animation.stagger(index) }}
+                      className={`px-4 py-2 rounded-full border-2 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default hover:scale-105 font-medium text-sm`}
+                      style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       {topic}
                     </Badge>
                   ))}
                 </div>
                 
-                {/* Additional expertise indicators */}
-                <div className="mt-12 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                  <div className="text-center p-4 rounded-lg bg-muted/30">
-                    <div className="text-2xl mb-2">🏆</div>
-                    <h4 className="font-semibold mb-1">Technical Leadership</h4>
-                    <p className="text-sm text-muted-foreground">Leading engineering teams and architectural decisions</p>
-                  </div>
-                  <div className="text-center p-4 rounded-lg bg-muted/30">
-                    <div className="text-2xl mb-2">⚡</div>
-                    <h4 className="font-semibold mb-1">Performance Optimization</h4>
-                    <p className="text-sm text-muted-foreground">Building scalable, high-performance applications</p>
-                  </div>
-                  <div className="text-center p-4 rounded-lg bg-muted/30">
-                    <div className="text-2xl mb-2">🔮</div>
-                    <h4 className="font-semibold mb-1">Future-Ready</h4>
-                    <p className="text-sm text-muted-foreground">Embracing emerging technologies and trends</p>
-                  </div>
+                {/* Enhanced Expertise Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                  <Card className={`${theme.card.base} bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 hover:border-primary/40 transition-all duration-300 group`}>
+                    <CardContent className="p-6 text-center">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <Trophy className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className={`${theme.text.h6} mb-2 font-semibold`}>Technical Leadership</h4>
+                      <p className={`${theme.text.mutedSmall} leading-relaxed`}>Leading engineering teams and architectural decisions</p>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card className={`${theme.card.base} bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20 hover:border-accent/40 transition-all duration-300 group`}>
+                    <CardContent className="p-6 text-center">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <Zap className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className={`${theme.text.h6} mb-2 font-semibold`}>Performance Optimization</h4>
+                      <p className={`${theme.text.mutedSmall} leading-relaxed`}>Building scalable, high-performance applications</p>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card className={`${theme.card.base} bg-gradient-to-br from-secondary/5 to-secondary/10 border-secondary/20 hover:border-secondary/40 transition-all duration-300 group sm:col-span-2 lg:col-span-1`}>
+                    <CardContent className="p-6 text-center">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-secondary to-secondary/80 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <Sparkles className="w-6 h-6 text-white" />
+                      </div>
+                      <h4 className={`${theme.text.h6} mb-2 font-semibold`}>Future-Ready</h4>
+                      <p className={`${theme.text.mutedSmall} leading-relaxed`}>Embracing emerging technologies and trends</p>
+                    </CardContent>
+                  </Card>
                 </div>
               </CardContent>
             </Card>
