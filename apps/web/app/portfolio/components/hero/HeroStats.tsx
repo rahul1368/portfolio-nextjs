@@ -8,7 +8,6 @@ interface HeroStatsProps {
   };
 }
 
-import { theme } from "../../theme";
 
 export function HeroStats({ stats }: HeroStatsProps) {
   return (

@@ -6,7 +6,6 @@ import { Input } from "@repo/ui";
 import { Label } from "@repo/ui";
 import { Textarea } from "@repo/ui";
 import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
-import { theme } from "../../theme";
 import { Send, Loader2 } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "sonner";
@@ -228,7 +227,7 @@ export function ContactForm() {
             ref={recaptchaRef}
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
             size="invisible"
-            theme="auto"
+            theme="light"
           />
 
           <Button 

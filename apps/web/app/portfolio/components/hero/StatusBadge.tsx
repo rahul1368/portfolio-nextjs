@@ -1,7 +1,6 @@
 "use client";
 
 import { Badge } from "@repo/ui";
-import { theme } from "../../theme";
 
 interface StatusBadgeProps {
   status: string;

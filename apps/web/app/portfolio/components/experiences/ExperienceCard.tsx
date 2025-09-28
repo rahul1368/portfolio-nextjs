@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader } from "@repo/ui";
 import { Badge } from "@repo/ui";
 import { ExternalLink, MapPin, Calendar, Briefcase } from "lucide-react";
 import Image from "next/image";
-import { theme } from "../../theme";
 
 interface ExperienceCardProps {
   company: string;

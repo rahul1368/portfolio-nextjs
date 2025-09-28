@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@repo/ui";
 import { Card } from "@repo/ui";
 import { Home, Code, Briefcase, FolderOpen, Github, Mail, ChevronUp, Sparkles } from "lucide-react";
-import { theme } from "../theme";
 import { getNavigationData } from "../lib/content";
 
 interface NavigationToolbarProps {

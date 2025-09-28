@@ -3,7 +3,7 @@
 import { Badge } from "@repo/ui";
 import { Card, CardContent, CardHeader, CardTitle } from "@repo/ui";
 import { Cpu, Settings, Cloud, Bot, Building, Monitor, Database, Users, TestTube, Shield, Wrench, Layers } from "lucide-react";
-import { theme, colorSchemes } from "../../theme";
+import { theme } from "../../theme";
 
 interface SkillCategoryCardProps {
   category: string;
@@ -31,7 +31,6 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export function SkillCategoryCard({ category, icon, colorScheme, skills, index }: SkillCategoryCardProps) {
   const IconComponent = iconMap[icon] || Monitor; // fallback to Monitor if icon not found
-  const scheme = colorSchemes[colorScheme as keyof typeof colorSchemes] || colorSchemes.primary;
   
   return (
     <Card 

@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardContent } from "@repo/ui";
-import { theme } from "../../theme";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 interface ContactInfoProps {

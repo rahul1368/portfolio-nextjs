@@ -1,7 +1,6 @@
 "use client";
 
 import { Separator } from "@repo/ui";
-import { theme } from '../portfolio/theme';
 
 interface FooterProps {
   brand: {

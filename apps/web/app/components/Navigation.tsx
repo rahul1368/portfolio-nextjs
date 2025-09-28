@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@repo/ui";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from '../portfolio/components/ThemeToggle';
-import { theme } from '../portfolio/theme';
 
 interface NavigationProps {
   brand: string;

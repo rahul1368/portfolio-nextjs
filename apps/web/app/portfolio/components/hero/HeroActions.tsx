@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@repo/ui";
-import { theme } from "../../theme";
 
 interface HeroActionsProps {
   primaryCta: string;
