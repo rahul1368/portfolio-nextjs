@@ -5,6 +5,7 @@ import { HeroSection } from '../portfolio/components/HeroSection';
 import { SkillsSection } from '../portfolio/components/SkillsSection';
 import { ExperienceSection } from '../portfolio/components/experiences/ExperienceSection';
 import { ProjectsSection } from '../portfolio/components/ProjectsSection';
+import { GitHubReposSection } from '../portfolio/components/github-repos/GitHubReposSection';
 import { ContactSection } from '../portfolio/components/ContactSection';
 import { TimelineConnector } from '../portfolio/components/shared/TimelineConnector';
 import { Navigation } from './Navigation';
@@ -62,8 +63,14 @@ export function HomePageClient({ content }: HomePageClientProps) {
         {/* Projects Section - Using Portfolio Component */}
         <ProjectsSection />
 
-        {/* Timeline Connector: Projects → Contact */}
-        <TimelineConnector fromSection="projects" toSection="contact" />
+        {/* Timeline Connector: Projects → GitHub */}
+        <TimelineConnector fromSection="projects" toSection="github-repos" />
+
+        {/* GitHub Repositories Section */}
+        <GitHubReposSection username="rahul1368" maxRepos={12} />
+
+        {/* Timeline Connector: GitHub → Contact */}
+        <TimelineConnector fromSection="github-repos" toSection="contact" />
 
         {/* Contact Section - Using Portfolio Component */}
         <ContactSection />

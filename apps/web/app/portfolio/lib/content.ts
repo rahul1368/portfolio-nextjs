@@ -3,69 +3,72 @@
 
 // SEO Meta Content
 export const seoContent = {
-  title: "Rahul Kumar - Full-Stack Developer & UI/UX Designer | Modern Web Solutions",
-  description: "Experienced Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. 7+ years building scalable applications with focus on user experience and performance.",
+  title: "Rahul Kumar - Full Stack Engineer & Senior Software Engineer | Modern Web Solutions",
+  description: "Experienced Full Stack Engineer with 7+ years of experience. Specializing in JavaScript, TypeScript, React, Next.js, Node.js, Java, Spring Boot, Prisma ORM, GraphQL, and modern web technologies. Passionate about working with remote, international teams.",
   keywords: [
-    "Full Stack Developer",
-    "React Developer", 
-    "Next.js Developer",
+    "Full Stack Engineer",
+    "Senior Software Engineer",
+    "JavaScript Developer", 
     "TypeScript Developer",
-    "UI/UX Designer",
-    "Frontend Developer",
-    "Backend Developer",
-    "Web Developer",
-    "JavaScript Developer",
+    "React Developer",
+    "Next.js Developer",
     "Node.js Developer",
-    "Modern Web Development",
-    "Responsive Design",
-    "User Experience",
-    "Web Performance",
-    "Software Engineer"
+    "Java Developer",
+    "Spring Boot Developer",
+    "Prisma ORM",
+    "GraphQL Developer",
+    "Web Developer",
+    "Software Engineer",
+    "Remote Developer",
+    "International Teams",
+    "SaaS Development"
   ],
   author: "Rahul Kumar",
-  canonical: "https://rahulkumar.dev",
+  canonical: "https://rahul-portfolio-six-flame.vercel.app",
   openGraph: {
-    title: "Rahul Kumar - Full-Stack Developer & UI/UX Designer",
-    description: "Experienced Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Building beautiful, functional digital experiences.",
+    title: "Rahul Kumar - Full Stack Engineer & Senior Software Engineer",
+    description: "Experienced Full Stack Engineer with 7+ years of experience. Specializing in JavaScript, TypeScript, React, Next.js, Node.js, Java, Spring Boot, and modern web technologies.",
     type: "profile",
-    url: "https://rahulkumar.dev",
-    image: "https://rahulkumar.dev/og-image.jpg",
+    url: "https://rahul-portfolio-six-flame.vercel.app",
+    image: "https://ui-avatars.com/api/?name=Rahul+Kumar+Portfolio&size=1200&background=4F46E5&color=FFFFFF",
     siteName: "Rahul Kumar Portfolio"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rahul Kumar - Full-Stack Developer & UI/UX Designer",
-    description: "Experienced Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
-    image: "https://rahulkumar.dev/twitter-image.jpg"
+    title: "Rahul Kumar - Full Stack Engineer & Senior Software Engineer",
+    description: "Experienced Full Stack Engineer with 7+ years of experience. Specializing in JavaScript, TypeScript, React, Next.js, Node.js, Java, Spring Boot, and modern web technologies.",
+    image: "https://ui-avatars.com/api/?name=Rahul+Kumar+Portfolio&size=1200&background=4F46E5&color=FFFFFF"
   },
   structuredData: {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Rahul Kumar",
-    "jobTitle": "Full-Stack Developer & UI/UX Designer",
-    "description": "Experienced Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies",
-    "url": "https://rahulkumar.dev",
+    "jobTitle": "Full Stack Engineer & Senior Software Engineer",
+    "description": "Experienced Full Stack Engineer with 7+ years of experience. Specializing in JavaScript, TypeScript, React, Next.js, Node.js, Java, Spring Boot, and modern web technologies",
+    "url": "https://rahul-portfolio-six-flame.vercel.app",
     "sameAs": [
-      "https://linkedin.com/in/rahulkumar",
-      "https://github.com/rahulkumar",
-      "https://twitter.com/rahulkumar"
+      "https://www.linkedin.com/in/rahul1368/",
+      "https://github.com/rahul1368"
     ],
     "knowsAbout": [
       "Full Stack Development",
+      "JavaScript",
+      "TypeScript",
       "React",
       "Next.js", 
-      "TypeScript",
       "Node.js",
-      "UI/UX Design",
+      "Java",
+      "Spring Boot",
+      "Prisma ORM",
+      "GraphQL",
       "Web Development",
-      "JavaScript",
-      "CSS",
-      "HTML"
+      "Remote Work",
+      "International Teams"
     ],
     "hasOccupation": {
       "@type": "Occupation",
-      "name": "Full-Stack Developer & UI/UX Designer",
-      "description": "Building beautiful, functional digital experiences with modern web technologies"
+      "name": "Full Stack Engineer & Senior Software Engineer",
+      "description": "Building scalable web applications with modern technologies for remote, international teams"
     }
   }
 } as const;
@@ -73,91 +76,218 @@ export const seoContent = {
 // Hero Section Content
 export const heroContent = {
   name: "Rahul Kumar",
-  title: "Full-Stack Developer",
-  subtitle: "UI/UX Designer • Problem Solver",
+  title: "Lead Full Stack Engineer",
+  subtitle: "Tech Leader • Innovation Architect • Entrepreneur",
   status: "Available for work",
-  description: "I craft beautiful, functional digital experiences that solve real problems and delight users. Passionate about clean code, intuitive design, and innovative solutions.",
-  primaryCta: "View My Work",
-  secondaryCta: "Get In Touch",
-  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+  description: "I transforms ambitious ideas into scalable digital realities. With 7+ years of architecting distributed systems and leading cross-functional teams of 8-12 engineers, I specialize in building enterprise-grade applications that handle 10M+ users with 99.9% uptime. My expertise spans from crafting intuitive user experiences to designing robust microservices architectures across 50+ production systems. I'm passionate about Agentic AI development, creating intelligent systems that learn and adapt. As an entrepreneur, I've built Poplitu from the ground up, proving that innovative thinking combined with technical excellence can create game-changing solutions. I thrive on solving complex problems, mentoring teams, and pushing the boundaries of what's possible in full-stack development.",  secondaryCta: "Get In Touch",
+  avatar: "/me.jpg",
   fallback: "RK",
   stats: {
     projects: "50+",
-    experience: "5+ Years",
+    experience: "7+ Years",
     satisfaction: "100%"
   },
-  seoTitle: "Full-Stack Developer & UI/UX Designer - Rahul Kumar",
-  seoDescription: "Experienced Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. 5+ years building scalable applications at GoDaddy, MetaMap, ETMoney, and other leading companies."
+  seoTitle: "Full Stack Engineer & Senior Software Engineer - Rahul Kumar",
+  seoDescription: "Experienced Full Stack Engineer with 7+ years of experience. Specializing in Java EE, JavaScript, TypeScript, React, Next.js, Node.js (MERN stack), Prisma ORM, GraphQL, Spring Boot. Passionate about working with remote, international teams to develop outstanding SaaS products."
 } as const;
 
 // Skills Section Content
 export const skillsContent = {
   header: {
-    badge: "Expertise",
-    title: "Technical Leadership",
-    description: "7+ years of experience building scalable distributed applications, leading engineering teams, and architecting modern solutions for enterprise clients."
+    badge: "Skills",
+    title: "Technical Expertise",
+    description: "I have more than 7 years of web development experience – since 2016."
   },
   categories: [
     {
-      category: "Frontend & UI/UX",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Storybook", "Jest", "Cypress", "Webpack", "Vite"],
+      category: "Languages",
+      skills: ["JavaScript", "TypeScript", "Python", "Go", "Java", "Rust", "C++", "PHP"],
       icon: "Cpu",
-      description: "Modern frontend architectures with focus on performance, accessibility, and user experience",
+      description: "Expert-level proficiency in multiple programming languages for full-stack development",
       colorScheme: "primary"
     },
     {
-      category: "Backend & APIs",
-      skills: ["Node.js", "Express", "FastAPI", "GraphQL", "REST APIs", "WebSockets", "gRPC", "PostgreSQL", "MongoDB", "Redis"],
-      icon: "Settings",
-      description: "Scalable backend systems, microservices architecture, and high-performance APIs",
-      colorScheme: "secondary"
-    },
-    {
-      category: "Cloud & DevOps",
-      skills: ["AWS", "GCP", "Terraform", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Jenkins", "ArgoCD", "Helm"],
-      icon: "Cloud",
-      description: "Cloud-native applications, infrastructure as code, and automated deployment pipelines",
+      category: "Frameworks",
+      skills: ["Node.js", "NestJS", "Express", "Django", "Next.js", "React", "Vue.js", "Angular"],
+      icon: "Monitor",
+      description: "Modern web frameworks for both frontend and backend development",
       colorScheme: "accent"
     },
     {
-      category: "AI & Machine Learning",
-      skills: ["Python", "TensorFlow", "PyTorch", "OpenAI API", "LangChain", "Vector DBs", "RAG", "LLMs", "MLOps", "Pandas"],
-      icon: "Bot",
-      description: "AI agentic applications, machine learning pipelines, and intelligent automation systems",
+      category: "Libraries",
+      skills: ["React", "Vue", "Solid.js", "RTK", "SWR", "React-Query", "React-DND", "Redux", "Chakra-UI", "AntD", "MUI"],
+      icon: "Settings",
+      description: "Essential libraries and UI component frameworks for modern web development",
+      colorScheme: "secondary"
+    },
+    {
+      category: "Tools",
+      skills: ["Turborepo", "Nx", "Lerna", "Vite", "Webpack", "ESLint", "Prettier", "Husky", "Jest", "Cypress"],
+      icon: "Wrench",
+      description: "Development tools, build systems, and monorepo management",
+      colorScheme: "info"
+    },
+    {
+      category: "Design Patterns",
+      skills: ["Singleton", "Factory", "Observer", "Strategy", "Decorator", "Adapter", "Facade", "Builder", "Command", "MVC"],
+      icon: "Layers",
+      description: "Essential design patterns for maintainable and scalable code",
       colorScheme: "warning"
     },
     {
-      category: "Architecture & Leadership",
-      skills: ["Microservices", "Monorepo", "System Design", "Team Leadership", "Code Reviews", "Technical Mentoring", "Agile", "Scrum", "Architecture Patterns"],
+      category: "Database & Storage",
+      skills: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Prisma ORM", "TypeORM", "Elasticsearch", "DynamoDB"],
+      icon: "Database",
+      description: "Database design, optimization, and management across multiple database systems",
+      colorScheme: "warning"
+    },
+    {
+      category: "DevOps & Cloud",
+      skills: ["Docker", "Kubernetes", "AWS", "Azure", "GCP", "Terraform", "Jenkins", "GitLab CI/CD"],
+      icon: "Cloud",
+      description: "Cloud infrastructure, containerization, and CI/CD pipeline management",
+      colorScheme: "info"
+    },
+    {
+      category: "Architecture & Design",
+      skills: ["System Design", "Microservices", "Event-Driven Architecture", "Domain-Driven Design", "SOLID Principles", "Clean Architecture", "CQRS", "Event Sourcing", "Hexagonal Architecture", "Onion Architecture"],
       icon: "Building",
-      description: "Technical leadership, system architecture, and team management for scalable solutions",
+      description: "Software architecture patterns and design principles for scalable systems",
       colorScheme: "primary"
     },
     {
-      category: "Languages & Frameworks",
-      skills: ["JavaScript", "TypeScript", "Python", "Go", "Rust", "Java", "C#", "React Native", "Flutter", "Electron"],
-      icon: "Monitor",
-      description: "Multi-language expertise across web, mobile, and desktop application development",
-      colorScheme: "secondary"
+      category: "Leadership & Management",
+      skills: ["Team Leadership", "Technical Mentoring", "Code Reviews", "Agile/Scrum", "Project Planning", "Stakeholder Management"],
+      icon: "Users",
+      description: "Technical leadership, team management, and agile development practices",
+      colorScheme: "success"
+    },
+    {
+      category: "Testing & Quality",
+      skills: ["Jest", "Cypress", "Playwright", "Unit Testing", "Integration Testing", "E2E Testing", "TDD", "BDD"],
+      icon: "TestTube",
+      description: "Comprehensive testing strategies and quality assurance practices",
+      colorScheme: "warning"
+    },
+    {
+      category: "AI & Machine Learning",
+      skills: ["OpenAI API", "LangChain", "Vector Databases", "Agentic AI", "Prompt Engineering", "RAG Systems", "LLM Integration"],
+      icon: "Bot",
+      description: "AI/ML integration, agentic AI development, and modern AI tooling",
+      colorScheme: "accent"
+    },
+    {
+      category: "Performance & Security",
+      skills: ["Performance Optimization", "Web Security", "OAuth 2.0", "JWT", "Rate Limiting", "Caching Strategies", "CDN"],
+      icon: "Shield",
+      description: "Application performance optimization and security best practices",
+      colorScheme: "destructive"
     }
   ],
   learning: {
-    title: "Continuous Innovation",
-    description: "Passionate about emerging technologies and their practical applications. Currently exploring advanced AI agent architectures, quantum computing applications, and next-generation web technologies.",
-    topics: ["AI Agents", "Quantum Computing", "WebAssembly", "Edge Computing", "Blockchain", "IoT", "AR/VR", "Serverless", "Observability"]
+    title: "Continuous Learning",
+    description: "Always exploring new technologies and frameworks to stay current with industry trends and best practices.",
+    topics: ["New Frameworks", "Cloud Technologies", "AI/ML", "DevOps", "Performance Optimization"]
   },
   proficiency: [
-    { skill: "React/Next.js", level: 95, years: "7+", category: "Frontend" },
-    { skill: "TypeScript", level: 92, years: "6+", category: "Language" },
-    { skill: "Node.js/Express", level: 90, years: "7+", category: "Backend" },
-    { skill: "Python/FastAPI", level: 88, years: "5+", category: "Backend" },
-    { skill: "AWS/GCP", level: 90, years: "5+", category: "Cloud" },
-    { skill: "Docker/K8s", level: 88, years: "4+", category: "DevOps" },
-    { skill: "System Design", level: 85, years: "5+", category: "Architecture" },
-    { skill: "AI/ML Integration", level: 75, years: "2+", category: "AI" }
+    // Languages
+    { skill: "JavaScript", level: 95, years: "7+", category: "Languages" },
+    { skill: "TypeScript", level: 90, years: "5+", category: "Languages" },
+    { skill: "Python", level: 60, years: "3+", category: "Languages" },
+    { skill: "Go", level: 40, years: "1+", category: "Languages" },
+    { skill: "Java", level: 70, years: "4+", category: "Languages" },
+    
+    // Frameworks
+    { skill: "Node.js", level: 90, years: "5+", category: "Frameworks" },
+    { skill: "Next.js", level: 90, years: "4+", category: "Frameworks" },
+    { skill: "React", level: 95, years: "6+", category: "Frameworks" },
+    { skill: "Express", level: 85, years: "4+", category: "Frameworks" },
+    { skill: "NestJS", level: 70, years: "2+", category: "Frameworks" },
+    { skill: "Django", level: 50, years: "1+", category: "Frameworks" },
+    { skill: "Vue.js", level: 60, years: "2+", category: "Frameworks" },
+    { skill: "Angular", level: 55, years: "2+", category: "Frameworks" },
+    
+    // Libraries
+    { skill: "Redux", level: 80, years: "4+", category: "Libraries" },
+    { skill: "React-Query", level: 75, years: "2+", category: "Libraries" },
+    { skill: "SWR", level: 70, years: "2+", category: "Libraries" },
+    { skill: "Chakra-UI", level: 80, years: "3+", category: "Libraries" },
+    { skill: "AntD", level: 70, years: "2+", category: "Libraries" },
+    { skill: "MUI", level: 75, years: "3+", category: "Libraries" },
+    { skill: "React-DND", level: 65, years: "2+", category: "Libraries" },
+    { skill: "Solid.js", level: 50, years: "1+", category: "Libraries" },
+    
+    // Tools
+    { skill: "Turborepo", level: 80, years: "2+", category: "Tools" },
+    { skill: "Nx", level: 70, years: "2+", category: "Tools" },
+    { skill: "Vite", level: 85, years: "3+", category: "Tools" },
+    { skill: "Webpack", level: 80, years: "4+", category: "Tools" },
+    { skill: "ESLint", level: 90, years: "5+", category: "Tools" },
+    { skill: "Prettier", level: 90, years: "5+", category: "Tools" },
+    { skill: "Jest", level: 85, years: "4+", category: "Tools" },
+    { skill: "Cypress", level: 70, years: "2+", category: "Tools" },
+    
+    // Design Patterns
+    { skill: "Singleton", level: 85, years: "4+", category: "Design Patterns" },
+    { skill: "Factory", level: 80, years: "3+", category: "Design Patterns" },
+    { skill: "Observer", level: 75, years: "3+", category: "Design Patterns" },
+    { skill: "Strategy", level: 70, years: "2+", category: "Design Patterns" },
+    { skill: "MVC", level: 90, years: "5+", category: "Design Patterns" },
+    { skill: "Decorator", level: 65, years: "2+", category: "Design Patterns" },
+    { skill: "Adapter", level: 70, years: "2+", category: "Design Patterns" },
+    { skill: "Builder", level: 60, years: "1+", category: "Design Patterns" },
+    
+    // Database & Storage
+    { skill: "PostgreSQL", level: 90, years: "5+", category: "Database & Storage" },
+    { skill: "MongoDB", level: 90, years: "5+", category: "Database & Storage" },
+    { skill: "Redis", level: 85, years: "4+", category: "Database & Storage" },
+    { skill: "Prisma ORM", level: 90, years: "3+", category: "Database & Storage" },
+    { skill: "Elasticsearch", level: 60, years: "2+", category: "Database & Storage" },
+    
+    // DevOps & Cloud
+    { skill: "Docker", level: 85, years: "4+", category: "DevOps & Cloud" },
+    { skill: "Kubernetes", level: 60, years: "2+", category: "DevOps & Cloud" },
+    { skill: "AWS", level: 70, years: "3+", category: "DevOps & Cloud" },
+    { skill: "Terraform", level: 50, years: "1+", category: "DevOps & Cloud" },
+    { skill: "CI/CD", level: 80, years: "4+", category: "DevOps & Cloud" },
+    
+    // Architecture & Design
+    { skill: "System Design", level: 75, years: "3+", category: "Architecture & Design" },
+    { skill: "Microservices", level: 75, years: "3+", category: "Architecture & Design" },
+    { skill: "Event-Driven Architecture", level: 70, years: "2+", category: "Architecture & Design" },
+    { skill: "Domain-Driven Design", level: 65, years: "2+", category: "Architecture & Design" },
+    { skill: "SOLID Principles", level: 85, years: "4+", category: "Architecture & Design" },
+    { skill: "Clean Architecture", level: 70, years: "2+", category: "Architecture & Design" },
+    { skill: "CQRS", level: 60, years: "1+", category: "Architecture & Design" },
+    { skill: "Event Sourcing", level: 55, years: "1+", category: "Architecture & Design" },
+    
+    // Leadership & Management
+    { skill: "Team Leadership", level: 85, years: "3+", category: "Leadership & Management" },
+    { skill: "Technical Mentoring", level: 80, years: "4+", category: "Leadership & Management" },
+    { skill: "Agile/Scrum", level: 90, years: "6+", category: "Leadership & Management" },
+    { skill: "Code Reviews", level: 90, years: "5+", category: "Leadership & Management" },
+    
+    // Testing & Quality
+    { skill: "Unit Testing", level: 90, years: "5+", category: "Testing & Quality" },
+    { skill: "Integration Testing", level: 80, years: "4+", category: "Testing & Quality" },
+    { skill: "E2E Testing", level: 75, years: "3+", category: "Testing & Quality" },
+    { skill: "TDD", level: 75, years: "3+", category: "Testing & Quality" },
+    { skill: "BDD", level: 70, years: "2+", category: "Testing & Quality" },
+    
+    // AI & Machine Learning
+    { skill: "OpenAI API", level: 70, years: "2+", category: "AI & Machine Learning" },
+    { skill: "LangChain", level: 60, years: "1+", category: "AI & Machine Learning" },
+    { skill: "Agentic AI", level: 65, years: "1+", category: "AI & Machine Learning" },
+    { skill: "Prompt Engineering", level: 70, years: "2+", category: "AI & Machine Learning" },
+    
+    // Performance & Security
+    { skill: "Performance Optimization", level: 80, years: "4+", category: "Performance & Security" },
+    { skill: "Web Security", level: 70, years: "3+", category: "Performance & Security" },
+    { skill: "OAuth 2.0", level: 75, years: "3+", category: "Performance & Security" },
+    { skill: "Caching Strategies", level: 80, years: "4+", category: "Performance & Security" }
   ],
-  seoTitle: "Full-Stack Development Skills & Technologies - Rahul Kumar",
-  seoDescription: "Comprehensive technical expertise in React, Next.js, TypeScript, Node.js, AWS, and modern web development. 7+ years of full-stack development experience with focus on scalable solutions."
+  seoTitle: "Full Stack Development Skills - JavaScript, TypeScript, React, Node.js",
+  seoDescription: "7+ years of web development experience with expertise in JavaScript, TypeScript, React, Next.js, Node.js, Java, Spring Boot, Prisma ORM, GraphQL, Docker, Kubernetes, and modern web technologies."
 } as const;
 
 // Experience Section Content
@@ -182,7 +312,7 @@ export const experienceContent = {
         "Led code reviews and mentored junior developers in best practices"
       ],
       technologies: ["React", "Node.js", "TypeScript", "AWS", "Docker", "Kubernetes", "PostgreSQL", "GraphQL"],
-      logo: "https://www.godaddy.com/favicon.ico",
+      logo: "/godaddy-logo.png",
       website: "https://www.godaddy.com"
     },
     {
@@ -199,7 +329,7 @@ export const experienceContent = {
         "Collaborated with product team to enhance user experience"
       ],
       technologies: ["React", "Node.js", "TypeScript", "Python", "FastAPI", "MongoDB", "Redis", "AWS"],
-      logo: "https://metamap.com/favicon.ico",
+      logo: "/metamap-logo.png",
       website: "https://metamap.com"
     },
     {
@@ -216,7 +346,7 @@ export const experienceContent = {
         "Created responsive mobile-first designs for financial data visualization"
       ],
       technologies: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "Redis", "AWS", "Docker"],
-      logo: "https://etmoney.com/favicon.ico",
+      logo: "/etmoney-logo.avif",
       website: "https://etmoney.com"
     },
     {
@@ -233,7 +363,7 @@ export const experienceContent = {
         "Optimized frontend performance reducing page load time by 35%"
       ],
       technologies: ["React", "JavaScript", "Redux", "HTML", "CSS", "SASS", "Webpack", "Jest"],
-      logo: "https://www.shopclues.com/favicon.ico",
+      logo: "/shopclues-logo.jpg",
       website: "https://www.shopclues.com"
     },
     {
@@ -250,7 +380,7 @@ export const experienceContent = {
         "Created responsive mobile-first design for educational content"
       ],
       technologies: ["React", "JavaScript", "HTML5", "CSS3", "Video.js", "WebRTC", "Firebase", "MongoDB"],
-      logo: "https://doubtnut.com/favicon.ico",
+      logo: "/doubtnut.png",
       website: "https://doubtnut.com"
     }
   ],
@@ -261,40 +391,50 @@ export const experienceContent = {
 // Projects Section Content
 export const projectsContent = {
   header: {
-    badge: "Portfolio",
-    title: "Featured Projects",
-    description: "A showcase of my recent work and side projects. Each project represents a unique challenge and learning opportunity."
+    badge: "Work",
+    title: "Professional Projects",
+    description: "A showcase of my professional work and side projects. Each project represents a unique challenge and learning opportunity."
   },
   projects: [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with Next.js, featuring real-time inventory management, secure payments, and responsive design.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-      liveUrl: "https://demo.example.com",
-      githubUrl: "https://github.com/username/ecommerce",
-      seoTitle: "E-Commerce Platform - Next.js, TypeScript, Stripe Integration",
-      seoDescription: "Full-stack e-commerce solution built with Next.js, TypeScript, and Stripe. Features real-time inventory management, secure payments, and responsive design."
+      title: "Merchant Dashboard",
+      description: "Developed a comprehensive merchant dashboard to manage transactions, track sales, and generate reports. Utilized modern frameworks to ensure a seamless and responsive user experience.",
+      image: "https://ui-avatars.com/api/?name=Merchant+Dashboard&size=600&background=4F46E5&color=FFFFFF",
+      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      liveUrl: "#",
+      githubUrl: "#",
+      seoTitle: "Merchant Dashboard - Transaction Management & Sales Tracking",
+      seoDescription: "Comprehensive merchant dashboard for managing transactions, tracking sales, and generating reports with modern web technologies."
     },
     {
-      title: "Task Management App",
-      description: "A real-time collaborative task management application with drag-and-drop functionality, team collaboration features, and project tracking.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
-      liveUrl: "https://tasks.example.com",
-      githubUrl: "https://github.com/username/taskmanager",
-      seoTitle: "Task Management App - React, Node.js, Real-time Collaboration",
-      seoDescription: "Real-time collaborative task management application built with React and Node.js. Features drag-and-drop functionality, team collaboration, and project tracking."
+      title: "Web SDK Platform",
+      description: "Created a robust Web SDK platform for integrating various third-party services. Ensured high performance and scalability to support multiple clients and use cases.",
+      image: "https://ui-avatars.com/api/?name=Web+SDK+Platform&size=600&background=059669&color=FFFFFF",
+      technologies: ["JavaScript", "TypeScript", "Node.js", "Express", "MongoDB"],
+      liveUrl: "#",
+      githubUrl: "#",
+      seoTitle: "Web SDK Platform - Third-party Service Integration",
+      seoDescription: "Robust Web SDK platform for integrating various third-party services with high performance and scalability for multiple clients."
     },
     {
-      title: "Weather Dashboard",
-      description: "A comprehensive weather analytics dashboard with data visualization, historical trends, and predictive forecasting capabilities.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b2b?w=600&h=400&fit=crop",
-      technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "Redis"],
-      liveUrl: "https://weather.example.com",
-      githubUrl: "https://github.com/username/weather-dashboard",
-      seoTitle: "Weather Dashboard - Vue.js, D3.js, Data Visualization",
-      seoDescription: "Comprehensive weather analytics dashboard with data visualization, historical trends, and predictive forecasting. Built with Vue.js, D3.js, and Python."
+      title: "Investment Portfolio Dashboards",
+      description: "Designed and implemented interactive dashboards for tracking investment portfolios. Integrated real-time data feeds to provide up-to-date financial information.",
+      image: "https://ui-avatars.com/api/?name=Portfolio+Dashboard&size=600&background=DC2626&color=FFFFFF",
+      technologies: ["React", "D3.js", "Node.js", "PostgreSQL", "Redis"],
+      liveUrl: "#",
+      githubUrl: "#",
+      seoTitle: "Investment Portfolio Dashboard - Real-time Financial Tracking",
+      seoDescription: "Interactive dashboards for tracking investment portfolios with real-time data feeds and financial information visualization."
+    },
+    {
+      title: "E-commerce Web Application at Shopclues",
+      description: "Built a scalable e-commerce platform with features like product management, order processing, and payment integration. Ensured high availability and performance for a seamless shopping experience.",
+      image: "https://ui-avatars.com/api/?name=E-commerce+Platform&size=600&background=7C3AED&color=FFFFFF",
+      technologies: ["React", "JavaScript", "Node.js", "MongoDB", "Express"],
+      liveUrl: "https://www.shopclues.com",
+      githubUrl: "#",
+      seoTitle: "E-commerce Platform at Shopclues - Product Management & Payment Integration",
+      seoDescription: "Scalable e-commerce platform with product management, order processing, and payment integration for high availability and performance."
     }
   ],
   cta: {
@@ -302,8 +442,8 @@ export const projectsContent = {
     description: "I'm always excited to work on new projects and collaborate with amazing people. Let's discuss how we can bring your ideas to life.",
     button: "Let's Work Together"
   },
-  seoTitle: "Portfolio of Full-Stack Development Projects - Rahul Kumar",
-  seoDescription: "Showcase of full-stack development projects including e-commerce platforms, task management apps, and data visualization dashboards built with React, Next.js, and modern web technologies."
+  seoTitle: "Professional Projects - Merchant Dashboard, Web SDK, E-commerce Platform",
+  seoDescription: "Showcase of professional projects including merchant dashboard, Web SDK platform, investment portfolio dashboards, and e-commerce applications built with modern web technologies."
 } as const;
 
 // Contact Section Content
@@ -317,23 +457,23 @@ export const contactContent = {
     {
       title: "Email",
       description: "Send me an email anytime",
-      value: "hello@rahulkumar.dev",
+      value: "rahulchoudhary666666@gmail.com",
       action: "Send Email",
-      href: "mailto:hello@rahulkumar.dev",
+      href: "mailto:rahulchoudhary666666@gmail.com",
       icon: "Mail"
     },
     {
       title: "Phone",
       description: "Call me for urgent matters",
-      value: "+1 (555) 123-4567",
+      value: "(+91) - 9149000589",
       action: "Call",
-      href: "tel:+15551234567",
+      href: "tel:+919149000589",
       icon: "Phone"
     },
     {
       title: "Location",
-      description: "Based in the Bay Area",
-      value: "San Francisco, CA",
+      description: "Based in India",
+      value: "Bulandshahr, Uttar Pradesh, India",
       action: "View",
       href: "#",
       icon: "MapPin"
@@ -341,10 +481,18 @@ export const contactContent = {
     {
       title: "LinkedIn",
       description: "Connect with me professionally",
-      value: "linkedin.com/in/rahulkumar",
+      value: "linkedin.com/in/rahul1368",
       action: "Connect",
-      href: "https://linkedin.com/in/rahulkumar",
+      href: "https://www.linkedin.com/in/rahul1368/",
       icon: "Briefcase"
+    },
+    {
+      title: "GitHub",
+      description: "Check out my code",
+      value: "github.com/rahul1368",
+      action: "View",
+      href: "https://github.com/rahul1368",
+      icon: "Github"
     }
   ],
   form: {
@@ -358,8 +506,8 @@ export const contactContent = {
     },
     button: "Send Message"
   },
-  seoTitle: "Contact Full-Stack Developer - Rahul Kumar",
-  seoDescription: "Ready to work on your next project? Contact Rahul Kumar, experienced Full-Stack Developer specializing in React, Next.js, and modern web technologies."
+  seoTitle: "Contact Full Stack Engineer - Rahul Kumar",
+  seoDescription: "Ready to work on your next project? Contact Rahul Kumar, experienced Full Stack Engineer with 7+ years of experience in JavaScript, TypeScript, React, and modern web technologies."
 } as const;
 
 // Navigation Content
@@ -381,15 +529,17 @@ export const navigationContent = {
 export const footerContent = {
   brand: {
     name: "Rahul Kumar",
-    description: "Full-Stack Developer & UI/UX Designer",
-    seoDescription: "Full-Stack Developer and UI/UX Designer specializing in React, Next.js, TypeScript, and modern web technologies. Available for freelance and full-time opportunities."
+    description: "Full Stack Engineer & Senior Software Engineer",
+    seoDescription: "Full Stack Engineer and Senior Software Engineer with 7+ years of experience. Specializing in JavaScript, TypeScript, React, Next.js, Node.js, Java, Spring Boot, and modern web technologies. Available for freelance and full-time opportunities."
   },
   quickLinks: {
     title: "Quick Links",
     links: [
-      { label: "Portfolio", href: "/portfolio" },
+      { label: "Home", href: "#" },
+      { label: "About", href: "#about" },
       { label: "Skills", href: "#skills" },
-      { label: "Projects", href: "#projects" },
+      { label: "Resume", href: "#resume" },
+      { label: "Work", href: "#work" },
       { label: "Contact", href: "#contact" }
     ]
   },
@@ -397,7 +547,7 @@ export const footerContent = {
     title: "Services",
     links: [
       { label: "Web Development", href: "#" },
-      { label: "UI/UX Design", href: "#" },
+      { label: "Full Stack Development", href: "#" },
       { label: "Consulting", href: "#" },
       { label: "Code Review", href: "#" }
     ]
@@ -405,13 +555,13 @@ export const footerContent = {
   connect: {
     title: "Connect",
     links: [
-      { label: "Email", href: "mailto:hello@rahulkumar.dev" },
-      { label: "LinkedIn", href: "https://linkedin.com/in/rahulkumar" },
-      { label: "GitHub", href: "https://github.com/rahulkumar" },
-      { label: "Twitter", href: "https://twitter.com/rahulkumar" }
+      { label: "Email", href: "mailto:rahulchoudhary666666@gmail.com" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/rahul1368/" },
+      { label: "GitHub", href: "https://github.com/rahul1368" },
+      { label: "Phone", href: "tel:+919149000589" }
     ]
   },
-  copyright: "© 2024 Rahul Kumar. All rights reserved."
+  copyright: "© 2024 Created by Rahul"
 } as const;
 
 // Helper functions for easy access

@@ -143,18 +143,18 @@ export function ContactForm() {
   };
 
   return (
-    <Card className={`${theme.card.base} ${theme.card.hover}`}>
+    <Card className="bg-white/50 [.dark_&]:bg-slate-800/50 backdrop-blur-sm border border-slate-200/50 [.dark_&]:border-slate-700/50 hover:border-emerald-500/30 [.dark_&]:hover:border-emerald-400/30 hover:shadow-xl hover:shadow-emerald-500/10 [.dark_&]:hover:shadow-emerald-400/10 hover:bg-white/70 [.dark_&]:hover:bg-slate-800/70 transition-all duration-300 w-full max-w-full overflow-hidden">
       <CardHeader>
-        <CardTitle className={`${theme.text.h4} font-bold`}>Send me a message</CardTitle>
-        <p className={`${theme.text.mutedBody}`}>
+        <CardTitle className="text-xl sm:text-2xl font-bold text-slate-900 [.dark_&]:text-slate-100">Send me a message</CardTitle>
+        <p className="text-sm sm:text-base text-slate-600 [.dark_&]:text-slate-300">
           I&apos;m always interested in new opportunities and exciting projects.
         </p>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+            <div className="space-y-2 w-full">
+              <Label htmlFor="name" className="text-sm font-medium text-slate-700 [.dark_&]:text-slate-300">Name</Label>
               <Input
                 id="name"
                 name="name"
@@ -162,14 +162,14 @@ export function ContactForm() {
                 onChange={handleChange}
                 placeholder="Your name"
                 required
-                className={fieldErrors.name ? "border-red-500 focus:border-red-500" : ""}
+                className={`w-full ${fieldErrors.name ? "border-red-500 focus:border-red-500" : ""}`}
               />
               {fieldErrors.name && (
-                <p className="text-sm text-red-600 dark:text-red-400">{fieldErrors.name}</p>
+                <p className="text-sm text-red-600 [.dark_&]:text-red-400">{fieldErrors.name}</p>
               )}
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+            <div className="space-y-2 w-full">
+              <Label htmlFor="email" className="text-sm font-medium text-slate-700 [.dark_&]:text-slate-300">Email</Label>
               <Input
                 id="email"
                 name="email"
@@ -178,16 +178,16 @@ export function ContactForm() {
                 onChange={handleChange}
                 placeholder="your.email@example.com"
                 required
-                className={fieldErrors.email ? "border-red-500 focus:border-red-500" : ""}
+                className={`w-full ${fieldErrors.email ? "border-red-500 focus:border-red-500" : ""}`}
               />
               {fieldErrors.email && (
-                <p className="text-sm text-red-600 dark:text-red-400">{fieldErrors.email}</p>
+                <p className="text-sm text-red-600 [.dark_&]:text-red-400">{fieldErrors.email}</p>
               )}
             </div>
           </div>
           
-          <div className="space-y-2">
-            <Label htmlFor="subject">Subject</Label>
+          <div className="space-y-2 w-full">
+            <Label htmlFor="subject" className="text-sm font-medium text-slate-700 [.dark_&]:text-slate-300">Subject</Label>
             <Input
               id="subject"
               name="subject"
@@ -195,15 +195,15 @@ export function ContactForm() {
               onChange={handleChange}
               placeholder="What's this about?"
               required
-              className={fieldErrors.subject ? "border-red-500 focus:border-red-500" : ""}
+              className={`w-full ${fieldErrors.subject ? "border-red-500 focus:border-red-500" : ""}`}
             />
             {fieldErrors.subject && (
-              <p className="text-sm text-red-600 dark:text-red-400">{fieldErrors.subject}</p>
+              <p className="text-sm text-red-600 [.dark_&]:text-red-400">{fieldErrors.subject}</p>
             )}
           </div>
           
-          <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+          <div className="space-y-2 w-full">
+            <Label htmlFor="message" className="text-sm font-medium text-slate-700 [.dark_&]:text-slate-300">Message</Label>
             <Textarea
               id="message"
               name="message"
@@ -212,12 +212,12 @@ export function ContactForm() {
               placeholder="Tell me about your project..."
               rows={5}
               required
-              className={fieldErrors.message ? "border-red-500 focus:border-red-500" : ""}
+              className={`w-full resize-none ${fieldErrors.message ? "border-red-500 focus:border-red-500" : ""}`}
             />
             {fieldErrors.message && (
-              <p className="text-sm text-red-600 dark:text-red-400">{fieldErrors.message}</p>
+              <p className="text-sm text-red-600 [.dark_&]:text-red-400">{fieldErrors.message}</p>
             )}
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-slate-500 [.dark_&]:text-slate-400">
               {formData.message.length}/1000 characters
             </p>
           </div>
@@ -228,12 +228,12 @@ export function ContactForm() {
             ref={recaptchaRef}
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
             size="invisible"
-            theme="light"
+            theme="auto"
           />
 
           <Button 
             type="submit" 
-            className="w-full" 
+            className="w-full bg-emerald-500/10 [.dark_&]:bg-emerald-400/10 text-emerald-600 [.dark_&]:text-emerald-400 border-emerald-500/20 [.dark_&]:border-emerald-400/20 hover:bg-emerald-500/20 [.dark_&]:hover:bg-emerald-400/20 hover:border-emerald-500/30 [.dark_&]:hover:border-emerald-400/30" 
             size="lg"
             disabled={isSubmitting}
           >

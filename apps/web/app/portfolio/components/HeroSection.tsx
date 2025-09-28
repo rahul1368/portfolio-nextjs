@@ -14,24 +14,36 @@ export function HeroSection() {
   const heroData = getHeroData();
   
   return (
-    <section id="hero" className={`relative min-h-screen flex items-center justify-center ${theme.background.section}`}>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <AnimatedBackground />
       
-      <div className={`relative z-10 ${theme.section.container} py-12 sm:py-16 md:py-20`}>
+      {/* Enhanced Background with Material Colors */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-violet-50/20 [.dark_&]:from-slate-900 [.dark_&]:via-blue-900/20 [.dark_&]:to-violet-900/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 via-transparent to-cyan-500/5 [.dark_&]:from-emerald-400/10 [.dark_&]:via-transparent [.dark_&]:to-cyan-400/10"></div>
+      
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-500/20 [.dark_&]:bg-blue-400/30 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-violet-500/20 [.dark_&]:bg-violet-400/30 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-emerald-500/20 [.dark_&]:bg-emerald-400/30 rounded-full animate-pulse delay-2000"></div>
+        <div className="absolute top-2/3 right-1/4 w-1.5 h-1.5 bg-cyan-500/20 [.dark_&]:bg-cyan-400/30 rounded-full animate-pulse delay-500"></div>
+      </div>
+      
+      <div className={`relative z-10 ${theme.section.container} ${theme.section.padding}`}>
         <div className={theme.section.maxWidth}>
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-6 md:space-y-8">
               <StatusBadge status={heroData.status} />
-              <HeroHeading name={heroData.name} title={heroData.title} />
+              <HeroHeading name={heroData.name} title={heroData.title} subtitle={heroData.subtitle} />
               
               {/* Description */}
-              <p className={`${theme.text.bodyLarge} ${theme.text.muted} leading-relaxed max-w-lg`}>
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 [.dark_&]:text-slate-300 leading-relaxed max-w-lg animate-fade-in-up delay-300">
                 {heroData.description}
               </p>
               
               <HeroActions 
-                primaryCta={heroData.primaryCta} 
+                primaryCta="View My Work" 
                 secondaryCta={heroData.secondaryCta} 
               />
               
@@ -39,45 +51,70 @@ export function HeroSection() {
             </div>
             
             {/* Right Content - Avatar & Visual */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                {/* Main Avatar */}
-                <div className="relative z-10">
-                  <Avatar className="h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 mx-auto">
-                    <AvatarImage 
-                      src={heroData.avatar} 
-                      alt={heroData.name} 
-                      className="object-cover"
-                    />
-                    <AvatarFallback className={theme.text.avatarFallback}>{heroData.fallback}</AvatarFallback>
-                  </Avatar>
+            <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0 mb-8 sm:mb-12 lg:mb-0 px-6 sm:px-8 md:px-10 lg:px-0">
+              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none">
+                {/* Main Avatar - Optimized for All Devices */}
+                <div className="relative z-10 w-full flex justify-center">
+                  <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden shadow-2xl shadow-slate-500/20 [.dark_&]:shadow-slate-400/20 border-4 border-white/20 [.dark_&]:border-slate-700/30 backdrop-blur-sm hover:scale-105 transition-transform duration-300 hover:shadow-3xl hover:shadow-blue-500/20 [.dark_&]:hover:shadow-blue-400/20">
+                    <Avatar className="w-full h-full">
+                      <AvatarImage 
+                        src={heroData.avatar} 
+                        alt={heroData.name} 
+                        className="object-cover w-full h-full"
+                        style={{ 
+                          objectFit: 'cover',
+                          objectPosition: 'center'
+                        }}
+                      />
+                      <AvatarFallback className="w-full h-full flex items-center justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-blue-500 to-violet-500 text-white">
+                        {heroData.fallback}
+                      </AvatarFallback>
+                    </Avatar>
+                  </div>
                 </div>
                 
-                {/* Floating Elements - Hidden on very small screens */}
-                <div className="hidden sm:block absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center animate-float">
-                  <Monitor className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary" />
-                </div>
-                <div className="hidden sm:block absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-secondary/10 rounded-full flex items-center justify-center animate-float delay-1000">
-                  <Palette className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-secondary" />
-                </div>
-                <div className="hidden sm:block absolute top-1/2 -left-4 sm:-left-6 md:-left-8 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-accent/10 rounded-full flex items-center justify-center animate-float delay-500">
-                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-accent" />
+                {/* Floating Elements with Enhanced Material Colors - Mobile Optimized */}
+                {/* Top Right - Monitor Icon */}
+                <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 md:-top-4 md:-right-4 lg:-top-6 lg:-right-6 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-500/30 to-blue-600/20 [.dark_&]:from-blue-400/30 [.dark_&]:to-blue-500/20 rounded-full flex items-center justify-center animate-float shadow-xl shadow-blue-500/30 [.dark_&]:shadow-blue-400/30 border border-blue-500/20 [.dark_&]:border-blue-400/20 backdrop-blur-sm">
+                  <Monitor className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-blue-600 [.dark_&]:text-blue-400 animate-pulse" />
                 </div>
                 
-                {/* Background Glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-2xl sm:blur-3xl scale-105 sm:scale-110"></div>
+                {/* Bottom Left - Palette Icon */}
+                <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 md:-bottom-4 md:-left-4 lg:-bottom-6 lg:-left-6 w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-emerald-500/30 to-emerald-600/20 [.dark_&]:from-emerald-400/30 [.dark_&]:to-emerald-500/20 rounded-full flex items-center justify-center animate-float delay-1000 shadow-xl shadow-emerald-500/30 [.dark_&]:shadow-emerald-400/30 border border-emerald-500/20 [.dark_&]:border-emerald-400/20 backdrop-blur-sm">
+                  <Palette className="w-3 h-3 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-emerald-600 [.dark_&]:text-emerald-400 animate-pulse delay-1000" />
+                </div>
+                
+                {/* Middle Left - Zap Icon */}
+                <div className="absolute top-1/2 -left-3 sm:-left-4 md:-left-5 lg:-left-6 xl:-left-8 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-violet-500/30 to-violet-600/20 [.dark_&]:from-violet-400/30 [.dark_&]:to-violet-500/20 rounded-full flex items-center justify-center animate-float delay-500 shadow-xl shadow-violet-500/30 [.dark_&]:shadow-violet-400/30 border border-violet-500/20 [.dark_&]:border-violet-400/20 backdrop-blur-sm">
+                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 text-violet-600 [.dark_&]:text-violet-400 animate-pulse delay-500" />
+                </div>
+                
+                {/* Additional Mobile Icons for Better Visual Appeal */}
+                {/* Top Left - Additional Icon */}
+                <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:hidden w-6 h-6 bg-gradient-to-br from-cyan-500/30 to-cyan-600/20 [.dark_&]:from-cyan-400/30 [.dark_&]:to-cyan-500/20 rounded-full flex items-center justify-center animate-float delay-700 shadow-xl shadow-cyan-500/30 [.dark_&]:shadow-cyan-400/30 border border-cyan-500/20 [.dark_&]:border-cyan-400/20 backdrop-blur-sm">
+                  <Zap className="w-3 h-3 text-cyan-600 [.dark_&]:text-cyan-400 animate-pulse delay-700" />
+                </div>
+                
+                {/* Bottom Right - Additional Icon */}
+                <div className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:hidden w-6 h-6 bg-gradient-to-br from-rose-500/30 to-rose-600/20 [.dark_&]:from-rose-400/30 [.dark_&]:to-rose-500/20 rounded-full flex items-center justify-center animate-float delay-300 shadow-xl shadow-rose-500/30 [.dark_&]:shadow-rose-400/30 border border-rose-500/20 [.dark_&]:border-rose-400/20 backdrop-blur-sm">
+                  <Monitor className="w-3 h-3 text-rose-600 [.dark_&]:text-rose-400 animate-pulse delay-300" />
+                </div>
+                
+                {/* Enhanced Background Glow with Material Colors - Mobile Optimized */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-violet-500/15 to-emerald-500/20 [.dark_&]:from-blue-400/25 [.dark_&]:via-violet-400/20 [.dark_&]:to-emerald-400/25 rounded-full blur-xl sm:blur-2xl md:blur-3xl scale-105 sm:scale-110 md:scale-115 animate-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-rose-500/10 [.dark_&]:from-cyan-400/15 [.dark_&]:via-transparent [.dark_&]:to-rose-400/15 rounded-full blur-lg sm:blur-xl md:blur-2xl scale-110 sm:scale-125 md:scale-130 animate-pulse delay-1000"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="flex flex-col items-center gap-1 sm:gap-2 text-muted-foreground animate-bounce">
-          <span className={`${theme.text.mutedSmall} font-medium`}>Scroll to explore</span>
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 sm:h-3 bg-muted-foreground/50 rounded-full mt-1.5 sm:mt-2"></div>
+      {/* Enhanced Scroll Indicator with Material Colors */}
+      <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 lg:bottom-12 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 text-slate-600 [.dark_&]:text-slate-300 animate-bounce">
+          <span className="text-xs sm:text-sm font-medium text-slate-600 [.dark_&]:text-slate-300">Scroll to explore</span>
+          <div className="w-6 h-10 sm:w-7 sm:h-12 border-2 border-slate-300/50 [.dark_&]:border-slate-600/50 rounded-full flex justify-center shadow-lg shadow-slate-500/20 [.dark_&]:shadow-slate-400/20 bg-white/50 [.dark_&]:bg-slate-800/50 backdrop-blur-sm">
+            <div className="w-1.5 h-3 sm:h-4 bg-gradient-to-b from-blue-500 to-violet-500 [.dark_&]:from-blue-400 [.dark_&]:to-violet-400 rounded-full mt-1.5 sm:mt-2 animate-pulse"></div>
           </div>
         </div>
       </div>

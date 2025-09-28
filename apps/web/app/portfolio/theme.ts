@@ -45,8 +45,8 @@
 export const theme = {
   // Layout
   section: {
-    padding: "py-24",
-    container: "container mx-auto px-4",
+    padding: "py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32",
+    container: "container mx-auto px-4 max-w-full overflow-hidden",
     maxWidth: "max-w-7xl mx-auto",
     spacing: "mb-20"
   },
