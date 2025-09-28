@@ -11,17 +11,38 @@
         "dist/**",
         "lib/**",
         "build/**"
+      ],
+      "env": [
+        "RECAPTCHA_SECRET_KEY",
+        "GMAIL_USER",
+        "GMAIL_APP_PASSWORD",
+        "CONTACT_EMAIL",
+        "NEXT_PUBLIC_RECAPTCHA_SITE_KEY"
       ]
     },
     "lint": {
       "dependsOn": ["^lint"],
       "inputs": ["$TURBO_DEFAULT$", ".eslintrc*", ".eslintignore"],
-      "outputs": []
+      "outputs": [],
+      "env": [
+        "RECAPTCHA_SECRET_KEY",
+        "GMAIL_USER",
+        "GMAIL_APP_PASSWORD",
+        "CONTACT_EMAIL",
+        "NEXT_PUBLIC_RECAPTCHA_SITE_KEY"
+      ]
     },
     "check-types": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", "tsconfig.json", "tsconfig.*.json"],
-      "outputs": []
+      "outputs": [],
+      "env": [
+        "RECAPTCHA_SECRET_KEY",
+        "GMAIL_USER",
+        "GMAIL_APP_PASSWORD",
+        "CONTACT_EMAIL",
+        "NEXT_PUBLIC_RECAPTCHA_SITE_KEY"
+      ]
     },
     "dev": {
       "cache": false,
